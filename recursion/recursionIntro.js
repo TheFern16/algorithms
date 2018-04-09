@@ -1,4 +1,12 @@
 //1. Write a function that loops through the numbers n down to 0. If you haven't done so try using a while loop to do this.
+function countDown(number) {
+  // takes a number
+  // while the current index is !== 0 then keep counting countDown\
+  while (number > 0) {
+    console.log(number);
+    number -= 1;
+  }
+}
 
 //2. Next, try looping just like above except using recursion
 

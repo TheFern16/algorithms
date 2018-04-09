@@ -89,9 +89,13 @@ Queue.prototype.peek = function() {
 // Time complexity: 0(1);
 
 Queue.prototype.count = function() {
-
+  if (this.index === this.toBeDequeued) {
+    return `Queue empty`;
+  } else {
+    return this.index - this.toBeDequeued;
+  }
 };
-// Time complexity:
+// Time complexity: 0(1);
 
 /*
 *** Exercises:

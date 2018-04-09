@@ -57,19 +57,25 @@ function Stack(capacity) {
 }
 
 Stack.prototype.push = function(value) {
-  // add to the storage
-  // increase current index by one
-  // increase count by one
   if (value !== null && value !== undefined) {
     this.storage[index] = value;
     this.index++;
     this.count++;
   }
 };
-// Time complexity:
+// Time complexity: O(1);
 
 Stack.prototype.pop = function() {
-  // implement me...
+  // if index is 0 then don't allow user to pop
+  // if the index is greater than 1 then allow them to pop
+    // reduce index and count by one
+  if (this.index > 0) {
+    this.index--;
+    delete this.storage[this.index];
+    this.count--;
+  } else {
+    return `Stack is empty`;
+  }
 };
 // Time complexity:
 

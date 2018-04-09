@@ -51,11 +51,20 @@ What's the time complexity?
  */
 
 function Stack(capacity) {
-  // implement me...
+  this.storage = {};
+  this.index = 0;
+  this.count = 0;
 }
 
 Stack.prototype.push = function(value) {
-  // implement me...
+  // add to the storage
+  // increase current index by one
+  // increase count by one
+  if (value !== null && value !== undefined) {
+    this.storage[index] = value;
+    this.index++;
+    this.count++;
+  }
 };
 // Time complexity:
 

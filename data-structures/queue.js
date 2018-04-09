@@ -51,11 +51,16 @@ What's the time complexity?
  */
 
 function Queue(capacity) {
-  // implement me...
+  this.storage = {};
+  this.index = 0;
 }
 
 Queue.prototype.enqueue = function(value) {
-  // implement me...
+  if (value !== undefined && value !== null) {
+    this.storage[this.index] = value;
+  } else {
+    return `Please supply additional value`;
+  }
 };
 // Time complexity:
 

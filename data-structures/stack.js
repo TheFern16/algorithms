@@ -66,9 +66,6 @@ Stack.prototype.push = function(value) {
 // Time complexity: O(1);
 
 Stack.prototype.pop = function() {
-  // if index is 0 then don't allow user to pop
-  // if the index is greater than 1 then allow them to pop
-    // reduce index and count by one
   if (this.index > 0) {
     this.index--;
     delete this.storage[this.index];
@@ -77,10 +74,16 @@ Stack.prototype.pop = function() {
     return `Stack is empty`;
   }
 };
-// Time complexity:
+// Time complexity: O(1);
 
 Stack.prototype.peek = function() {
-  // implement me...
+ // if the count is greater than 0
+  // show the most recent value added (at the back of the stack);
+  if (this.index > 0) {
+    return this.storage[this.index--];
+  } else {
+    return `Stack is empty`;
+  }
 };
 // Time complexity:
 

@@ -77,20 +77,19 @@ Stack.prototype.pop = function() {
 // Time complexity: O(1);
 
 Stack.prototype.peek = function() {
- // if the count is greater than 0
-  // show the most recent value added (at the back of the stack);
   if (this.index > 0) {
-    return this.storage[this.index--];
+    let i = this.index;
+    return this.storage[i--];
   } else {
     return `Stack is empty`;
   }
 };
-// Time complexity:
+// Time complexity: 0(1);
 
 Stack.prototype.count = function() {
-  // implement me...
+  return this.count;
 };
-// Time complexity:
+// Time complexity: O(1);
 
 
 /*

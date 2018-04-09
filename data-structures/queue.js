@@ -67,7 +67,6 @@ Queue.prototype.enqueue = function(value) {
 // Time complexity: 0(1);
 
 Queue.prototype.dequeue = function() {
-  // if both are equal then set them both to zero and remove both
   if (this.index === this.toBeDequeued) {
     this.index = 0;
     this.toBeDequeued = 0;
@@ -80,11 +79,17 @@ Queue.prototype.dequeue = function() {
 // Time complexity: 0(1);
 
 Queue.prototype.peek = function() {
-  // implement me...
+  if (this.index === this.toBeDequeued) {
+    return `Queue Empty`;
+  } else {
+    let i = this.index;
+    return this.storage[i--];
+  }
 };
+// Time complexity: 0(1);
 
 Queue.prototype.count = function() {
-  // implement me...
+
 };
 // Time complexity:
 

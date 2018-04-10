@@ -63,6 +63,16 @@ stack trace
   // return merge(Lsorted, Rsorted) >>>> [1,4,9,10,43,83]
 
 */
+function mergeSortRec(arr) {
+  if (arr.length <= 1) return arr;
+
+  const left = arr.slice(0, arr.length / 2);
+  const right = arr.slice(arr.length / 2);
+  const leftSorted = mergeSortRec(left);
+  const rightSorted = mergeSortRec(right);
+
+  return merge(leftSorted, rightSorted);
+}
 
 function merge(l, r) {
   var result = [];

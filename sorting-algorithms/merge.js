@@ -36,3 +36,24 @@ subarrays for natural merge sort: [ [1,2], [4,5], [9] ]
   // Rsorted = mergeSort(R);
   // return merge(Lsorted, Rsorted);
 
+/*
+stack trace
+// mergeSort(list);
+  // base case: if list.length < 2, return; // FALSE
+  // break the list into havles L & R [34, 83, 10] [9,1,4];
+  // Lsorted = mergeSort(L); [34,83,10];
+  // Rsorted = mergeSort(R); [9,1,4];
+  // return merge(Lsorted, Rsorted);
+
+// mergeSort(list);
+  // base case: if list.length < 2, return; // FALSE
+  // break the list into havles L & R // [34] [83,10]
+  // Lsorted = mergeSort(L); // [34];
+  // Rsorted = mergeSort(R); // [83, 10];
+  // return merge(Lsorted, Rsorted); [34] [10, 83] >>> [10,34,82];
+
+
+
+
+
+*/

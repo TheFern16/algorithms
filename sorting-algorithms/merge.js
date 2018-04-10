@@ -28,3 +28,11 @@ subarrays for regular merge sort: [ [1], [2], [4], [5], [9] ]
 subarrays for natural merge sort: [ [1,2], [4,5], [9] ]
 
 */
+
+// mergeSort(list);
+  // base case: if list.length < 2, return;
+  // break the list into havles L & R
+  // Lsorted = mergeSort(L);
+  // Rsorted = mergeSort(R);
+  // return merge(Lsorted, Rsorted);
+

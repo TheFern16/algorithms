@@ -22,13 +22,92 @@ Variants:
 
 */
 
-// partition(arr, low, high)
-  // choose last element to pivot
+// [3,7,6,1,2,5,4];
+// 3 < 4 ? true
+// pivotLoc index 1
 
-  // keep track of index of pivotLocation
+// 7 < 4 ? false
+// swap 4 with 7
+// and then swap 4 with 5
+// [3,5,6,1,2,4,7];
+
+// 5 < 4 ? false
+// swap 4 with 5
+// and then swap 4 with 2
+
+// 2 < 4 ? true
+// pivotLocation index 2
+
+// 6 < 4 ? false
+// swap 4 with 6
+// swap 4 with 1
+
+// is the element in the pivot location less than 4? we can finish
+
+// 1st stack
+// partition(arr, low, high)
+  // choose last element to pivot // arr[arr.ln] = 4
+
+  // keep track of index of pivotLocation // 0
   // init as low
 
-  // for i, loop from low to high
-    // if current arr[i] <= pivot
-      // swap pivotLocation and i
-      // increment pivotLocation
+  // for i, loop from low to high  // 0 to arr.length
+    // if current arr[i] <= pivot  // 3 <= 4 ? true
+      // swap pivotLocation and i  // nothing happens here
+      // increment pivotLocation // pivotLocation++ (now 1);
+
+// 2nd stack
+// partition(arr, low, high)
+  // choose last element to pivot // arr[arr.ln] = 4
+
+  // keep track of index of pivotLocation // 0
+  // init as low
+
+  // for i, loop from low to high  // 0 to arr.length
+    // if current arr[i] <= pivot  // 7 <= 4 ? false
+      // swap pivotLocation and i  // nothing happens here
+      // increment pivotLocation // nothing happens here
+    // else
+      // save 4 in a variable
+      // swap arr[arr.ln-1] with arr[i]
+      // move 5 to i, move 4 to arr.ln-1-i;
+
+
+/*
+  [3,7,6,1,2,5,4];
+  [3,4,6,1,2,5,7]; arr[pivotLoc] swaped with arr[pivot]
+  [3,5,6,1,2,4,7]; arr[pivot was decremented by 1] then swaped with arr[pivotLoc]
+
+  partition(arr, low, high)
+    pivotLocation = low
+    pivot = high
+    loop from low to High
+      if (arr[pivotLocation] < pivot)
+        pivotLocation++;
+      else
+        swap arr[pivotLocation] with arr[pivot];
+        swap arr[pivot] with
+*/
+function swap(arr, low, high) {
+
+}
+
+function partition(arr, low, high) {
+  var pivot = high;
+  var pivotLocation = low;
+  for (var i = low; i < high; i++) {
+    if (arr[i] <= arr[pivot]) {
+      swap(arr, pivotLocation, i);
+      pivotLocation++;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

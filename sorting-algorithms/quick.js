@@ -21,3 +21,14 @@ Variants:
 - Implement a multi-pivot quicksort (ex: partition into 3 subarrays using 2 pivots)
 
 */
+
+// partition(arr, low, high)
+  // choose last element to pivot
+
+  // keep track of index of pivotLocation
+  // init as low
+
+  // for i, loop from low to high
+    // if current arr[i] <= pivot
+      // swap pivotLocation and i
+      // increment pivotLocation

@@ -88,8 +88,23 @@ Variants:
         swap arr[pivotLocation] with arr[pivot];
         swap arr[pivot] with
 */
-function swap(arr, low, high) {
+function quicksort(array, low, high) {
+  if (low === undefined) {
+    low = 0;
+  }
+  if (high === undefined) {
+    high = array.length-1;
+  }
 
+  if (low < high) {
+    var p = partition(array, low, high);
+    quicksort(array, low, p-1);
+    quicksort(array, p+1, high);
+  }
+
+  if (hi-lo === array.length-1) {
+    return array;
+  }
 }
 
 function partition(arr, low, high) {
@@ -101,9 +116,21 @@ function partition(arr, low, high) {
       pivotLocation++;
     }
   }
+
+  swap(arr, pivotLocation, high);
+  return pivotLocation;
 }
 
 
+function swap (arr, i1, i2) {
+  if (i1 === i2) {
+    return;
+  }
+  let temp = arr[i1];
+  arr[i1] = arr[i2];
+  arr[i2] = temp;
+  return arr;
+}
 
 
 

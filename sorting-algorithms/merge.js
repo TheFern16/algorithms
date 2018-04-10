@@ -29,6 +29,7 @@ subarrays for natural merge sort: [ [1,2], [4,5], [9] ]
 
 */
 
+// LSORTED
 // mergeSort(list);
   // base case: if list.length < 2, return;
   // break the list into havles L & R
@@ -53,7 +54,32 @@ stack trace
   // return merge(Lsorted, Rsorted); [34] [10, 83] >>> [10,34,82];
 
 
-
-
+// FINAL STACK
+// mergeSort(list);
+  // base case: if list.length < 2, return;
+  // break the list into havles L & R
+  // Lsorted = mergeSort(L); [10,34,83]
+  // Rsorted = mergeSort(R); [1,4,9]
+  // return merge(Lsorted, Rsorted) >>>> [1,4,9,10,43,83]
 
 */
+
+function merge(l, r) {
+  var result = [];
+  var leftIndex = 0;
+  var rightIndex = 0;
+
+  while (result.length < (l.length + r.length)) {
+    if (leftIndex === l.llength) {
+      result = result.concat(r.slice(rightIndex));
+    } else if (rightIndex === r.length) {
+      result = result.concat(l.slice(leftIndex));
+    } else if (l[leftIndex] <= r[rightIndex]) {
+      result.push(l[leftIndex++]);
+    } else {
+      result.push(r[rightIndex++]);
+    }
+  }
+
+  return result;
+}

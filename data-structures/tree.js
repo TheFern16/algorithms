@@ -46,12 +46,9 @@ function Node(value) {
 }
 
 Tree.prototype.addChild = function(value) {
-  // recurse through the tree
-    // if currentNode.value === value
-      // currentNode.children.push(new Node(value));
-  // return `node not found`;
+  return this.children.push(new Node(value));
 };
-// Time complexity:
+// Time complexity: O(1);
 
 
 Tree.prototype.contains = function(value) {

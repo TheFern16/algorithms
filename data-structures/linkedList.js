@@ -171,9 +171,15 @@ LinkedList.prototype.findNode = function(value) {
 // Time complexity: O(n);
 
 LinkedList.prototype.appendToTail = function(value) {
-  // while this.next cycle through the linked list
-    // if this.next === null
-      // this.next = new Node(value); 
+  let currentNode = this.head;
+
+  while (currentNode) {
+    if (currentNode.next === null) {
+      currentNode.next = new Node(value);
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
 };
 // Time complexity: O(n);
 

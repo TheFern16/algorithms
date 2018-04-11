@@ -86,46 +86,68 @@ function Node(value) {
 }
 
 function LinkedList(headValue) {
-  if (headValue === undefined) console.log('Must provide value for first node');
+  if (headValue === undefined) {
+    console.log('Must provide value for first node');
+  }
   this.head = new Node(headValue);
 }
 
 LinkedList.prototype.forEach = function(callback) {
-  // implement me...
+  // while there is a next value
+    // invoke a callback on each value in the currentNode
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.print = function() {
-  // implement me...
+  // while there is a next value
+    // console.log each node value
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.insertAfter = function(node, value) {
-  // implement me...
+  // cycle through the linked list to find the past in value
+    // if found
+      // let temp = this.next
+      // this.next = node (passed in node);
+      // this.next.next = temp;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.removeAfter = function(node) {
-  // implement me...
+  // cycle through the linked list to find the passed in node
+    // if passedInNode.value === this.value
+      // delete this.next;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.insertHead = function(value) {
-  // implement me...
+  // if (this.head)
+    // let temp = this.head;
+    // this.head = new Node(value);
+    // this.head.next = this.head;
+  // else
+    // this.head = new Node(value);
 };
-// Time complexity:
+// Time complexity: O(1);
 
 LinkedList.prototype.removeHead = function() {
-  // implement me...
+  // if (this.head)
+    // this.head = null;
+  //
+    // return `head does not exist`;
 }
 
 LinkedList.prototype.findNode = function(value) {
-  // implement me...
+  // while this.next cycle through the linked list
+    // if (this.value === value)
+      // return `Node ${value} found`;
 };
 // Time complexity:
 
 LinkedList.prototype.appendToTail = function(value) {
-  // implement me...
+  // while this.next cycle through the linked list
+    // if this.next === null
+      // this.next = new Node(value);
 };
 // Time complexity:
 

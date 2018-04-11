@@ -55,12 +55,21 @@ Tree.prototype.addChild = function(value) {
 
 
 Tree.prototype.contains = function(value) {
-  // recurse through the tree
-    // if currentNode.value === value
-      // return `Node found`;
-  // return `node not found`;
+  let found;
+
+  (function search(currentNode) {
+    if (currentNode.value === value) {
+      found = value;
+      return  `Node ${value} found`;
+    }
+    if (currentNode.children === 0) return;
+    currentNode.children.forEach(child => {
+      search(child);
+    })
+  })(this.root);
+
+  return found !== undefined ? `Node ${value} found` : `not found`;
 };
-// Time complexity:
 
 
 Tree.prototype.traverseDepthFirst = function(fn) {

@@ -93,8 +93,12 @@ function LinkedList(headValue) {
 }
 
 LinkedList.prototype.forEach = function(callback) {
-  // while there is a next value
-    // invoke a callback on each value in the currentNode
+  let currentNode = this.head;
+  while (currentNode) {
+    let invokeCB = callback(currentNode.value);
+    currentNode.value = invokeCB;
+    currentNode = currentNode.next;
+  }
 };
 // Time complexity: O(n);
 
@@ -142,14 +146,14 @@ LinkedList.prototype.findNode = function(value) {
     // if (this.value === value)
       // return `Node ${value} found`;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.appendToTail = function(value) {
   // while this.next cycle through the linked list
     // if this.next === null
-      // this.next = new Node(value);
+      // this.next = new Node(value); 
 };
-// Time complexity:
+// Time complexity: O(n);
 
 
 // PART 2:

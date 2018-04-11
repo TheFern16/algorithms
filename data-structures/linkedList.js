@@ -104,7 +104,11 @@ LinkedList.prototype.forEach = function(callback) {
 // Time complexity: O(n);
 
 LinkedList.prototype.print = function() {
-  return linkedList.forEach((v) => console.log(v));
+  let currentNode = this.head;
+  while (currentNode) {
+    console.log(currentNode.value);
+    currentNode = currentNode.next;
+  }
 };
 // Time complexity: O(n);
 
@@ -190,16 +194,20 @@ LinkedList.prototype.appendToTail = function(value) {
 // 3 4       5 6 7
 
 LinkedList.prototype.insertBefore = function(node, value) {
-  // cycle through the linked list
-    // currentNode = 4
-    // if (currentNode.next === value)
-      // let temp = currentNode.next;
-      // let newNode = new Node(value);
-      // newNode.next = temp
-      // currentNode.next = newNode;
-      // return;
+  let currentNode = this.head;
+
+  while (currentNode) {
+    if (currentNode.next.value === value) {
+      let temp = currentNode.next;
+      node.next = temp;
+      currentNode.next = node;
+      return;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.removeBefore = function(node) {
   // implement me...

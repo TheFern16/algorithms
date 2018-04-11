@@ -150,11 +150,12 @@ LinkedList.prototype.insertHead = function(value) {
 // Time complexity: O(1);
 
 LinkedList.prototype.removeHead = function() {
-  // if (this.head)
-    // this.head = null;
-  //
-    // return `head does not exist`;
-}
+  if (this.head) {
+    this.head = null
+  } else {
+    return `head does not exist`;
+  }
+};
 
 LinkedList.prototype.findNode = function(value) {
   // while this.next cycle through the linked list

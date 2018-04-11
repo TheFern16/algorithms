@@ -65,12 +65,15 @@ Tree.prototype.contains = function(value) {
 
 Tree.prototype.traverseDepthFirst = function(fn) {
 
-  // pass in this to the subroutine
+  (function search(currentNode) {
+    console.log(currentNode.value)
+    if (currentNode.children === 0) return;
+    currentNode.value = fn[currentNode.value];
+    currentNode.children.forEach(child => {
+      search(child);
+    })
+  })(this.root);
 
-  // if (this.children.length === 0) return;
-  // this.value = fn(this.value);
-  // iterate over this.children (for each)
-    // recall subRoutine(child);
 };
 // Time complexity:
 

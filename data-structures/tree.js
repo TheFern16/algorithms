@@ -39,12 +39,6 @@ https://en.wikipedia.org/wiki/Trie
 
 */
 
-function Tree (value) {
-  // root
-  // value
-  // left
-  // right
-}
 
 function Node(value) {
   // this.value = value;
@@ -52,19 +46,31 @@ function Node(value) {
 }
 
 Tree.prototype.addChild = function(value) {
-  // implement me...
+  // recurse through the tree
+    // if currentNode.value === value
+      // currentNode.children.push(new Node(value));
+  // return `node not found`;
 };
 // Time complexity:
 
 
 Tree.prototype.contains = function(value) {
-  // implement me...
+  // recurse through the tree
+    // if currentNode.value === value
+      // return `Node found`;
+  // return `node not found`;
 };
 // Time complexity:
 
 
 Tree.prototype.traverseDepthFirst = function(fn) {
-  // implement me...
+
+  // pass in this to the subroutine
+
+  // if (this.children.length === 0) return;
+  // this.value = fn(this.value);
+  // iterate over this.children (for each)
+    // recall subRoutine(child);
 };
 // Time complexity:
 
@@ -73,3 +79,4 @@ Tree.prototype.traverseBreadthFirst = function(fn) {
   // implement me...
 };
 // Time complexity:
+

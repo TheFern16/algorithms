@@ -108,11 +108,17 @@ LinkedList.prototype.print = function() {
 // Time complexity: O(n);
 
 LinkedList.prototype.insertAfter = function(node, value) {
-  // cycle through the linked list to find the past in value
-    // if found
-      // let temp = this.next
-      // this.next = node (passed in node);
-      // this.next.next = temp;
+  let currentNode = this.head;
+  while (currentNode) {
+    if (currentNode.value === value) {
+      let temp = currentNode.next;
+      currentNode.next = node;
+      currentNode.next.next = temp;
+      return `Inserted`;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
 };
 // Time complexity: O(n);
 

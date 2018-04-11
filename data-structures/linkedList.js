@@ -103,8 +103,7 @@ LinkedList.prototype.forEach = function(callback) {
 // Time complexity: O(n);
 
 LinkedList.prototype.print = function() {
-  // while there is a next value
-    // console.log each node value
+  return linkedList.forEach((v) => console.log(v));
 };
 // Time complexity: O(n);
 

@@ -94,6 +94,7 @@ function LinkedList(headValue) {
 
 LinkedList.prototype.forEach = function(callback) {
   let currentNode = this.head;
+
   while (currentNode) {
     let invokeCB = callback(currentNode.value);
     currentNode.value = invokeCB;
@@ -109,6 +110,7 @@ LinkedList.prototype.print = function() {
 
 LinkedList.prototype.insertAfter = function(node, value) {
   let currentNode = this.head;
+
   while (currentNode) {
     if (currentNode.value === value) {
       let temp = currentNode.next;
@@ -123,9 +125,16 @@ LinkedList.prototype.insertAfter = function(node, value) {
 // Time complexity: O(n);
 
 LinkedList.prototype.removeAfter = function(node) {
-  // cycle through the linked list to find the passed in node
-    // if passedInNode.value === this.value
-      // delete this.next;
+  let currentNode = this.head;
+
+  while (currentNode) {
+    if (currentNode.value === node.value) {
+      currentNode.next = null;
+      return;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
 };
 // Time complexity: O(n);
 

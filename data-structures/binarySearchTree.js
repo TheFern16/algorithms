@@ -58,14 +58,23 @@ function BinarySearchTree (value) {
 }
 
 BinarySearchTree.prototype.insert = function(value) {
-  // if the value is less than
-    // if there is a left then go left
-    // else insert the value on the left side
-  // if the value is greater than this.value
-    // if value on the right then go right
-    // else insert
+  if (value <= this.value) {
+    if (value <= this.value && this.left) {
+      return this.left.insert(value)
+    } else {
+      this.left = new BinarySearchTree(value);
+      return;
+    }
+  } else {
+    if (value >= this.value && this.right) {
+      return this.right.insert(value);
+    } else {
+      this.right = new BinarySearchTree(value);
+      return;
+    }
+  }
 };
-// Time complexity:
+// Time complexity: log(n);
 
 BinarySearchTree.prototype.contains = function(value) {
   // implement me...

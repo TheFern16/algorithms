@@ -77,15 +77,22 @@ BinarySearchTree.prototype.insert = function(value) {
 // Time complexity: log(n);
 
 BinarySearchTree.prototype.contains = function(value) {
-  // recurse through the tree
-  // if the value is === this.value
-    // return true;
-  // else if this.left
-    // this.left.contains(value);
-  // else this.right
-    // this.right.contains(value);
-  // else
-    // return;
+
+  if (this.value === value) {
+    return true;
+  } else {
+    if (value <= this.value) {
+      if (this.left) {
+        return this.left.contains(value);
+      }
+    } else {
+      if (this.right) {
+        return this.right.contains(value);
+      }
+    }
+  }
+
+  return false;
 };
 // Time complexity: log(n);
 

@@ -58,7 +58,12 @@ function BinarySearchTree (value) {
 }
 
 BinarySearchTree.prototype.insert = function(value) {
-  // implement me...
+  // if the value is less than
+    // if there is a left then go left
+    // else insert the value on the left side
+  // if the value is greater than this.value
+    // if value on the right then go right
+    // else insert
 };
 // Time complexity:
 

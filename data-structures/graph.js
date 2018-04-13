@@ -109,7 +109,7 @@ Graph.prototype.removeNode = function(value) {
 // Time complexity:
 
 Graph.prototype.contains = function(value) {
-  // implement me...
+  return this._nodes[value] !== undefined;
 };
 // Time complexity:
 

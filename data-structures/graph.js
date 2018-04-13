@@ -140,7 +140,9 @@ Graph.prototype.hasEdge = function(value1, value2) {
 // Time complexity: O(n);
 
 Graph.prototype.forEach = function(fn) {
-  // implement me...
+  this._nodes.forEach(node => {
+    fn(node, this._node[node], this._nodes);
+  });
 };
 // Time complexity:
 

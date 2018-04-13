@@ -95,7 +95,7 @@ Graph.prototype.addNode = function(value) {
   if (value === undefined) return;
   this._nodes[value] = this._nodes[value] || [];
 };
-// Time complexity:
+// Time complexity: O(1);
 
 Graph.prototype.removeNode = function(value) {
   this._nodes[value].forEach(function(val) {
@@ -106,12 +106,12 @@ Graph.prototype.removeNode = function(value) {
 
   delete this._nodes[value];
 };
-// Time complexity:
+// Time complexity: O(1);
 
 Graph.prototype.contains = function(value) {
   return this._nodes[value] !== undefined;
 };
-// Time complexity:
+// Time complexity: O(1);
 
 Graph.prototype.addEdge = function(value1, value2) {
   if (!this._nodes[value1] || !this._nodes[value2]) {
@@ -120,7 +120,7 @@ Graph.prototype.addEdge = function(value1, value2) {
   this._nodes[value1].push(value2);
   this._nodes[value2].push(value1);
 };
-// Time complexity:
+// Time complexity: O(1):
 
 Graph.prototype.removeEdge = function(value1, value2) {
   if (!this._nodes[value1] || !this._nodes[value2]) {
@@ -132,12 +132,12 @@ Graph.prototype.removeEdge = function(value1, value2) {
   var value2Neighbors = this._nodes[value2];
   value2Neighbors.splice(value2Neighbors.indexOf(value1), 1);
 };
-// Time complexity:
+// Time complexity: O(n) or 2(n);
 
 Graph.prototype.hasEdge = function(value1, value2) {
-  // implement me...
+   return this._nodes[value1].indexOf(value2) > -1;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 Graph.prototype.forEach = function(fn) {
   // implement me...

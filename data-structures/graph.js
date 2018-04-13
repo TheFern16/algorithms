@@ -98,7 +98,13 @@ Graph.prototype.addNode = function(value) {
 // Time complexity:
 
 Graph.prototype.removeNode = function(value) {
-  // implement me...
+  this._nodes[value].forEach(function(val) {
+    var nextTo = this._nodes[val];
+    var index = nextTo.indexOf(value);
+    nextTo.splice(index, 1);
+  });
+
+  delete this._nodes[value];
 };
 // Time complexity:
 

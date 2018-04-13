@@ -106,7 +106,7 @@ BinarySearchTree.prototype.traverseDepthFirst_inOrder = function(fn) {
     this.right.traverseDepthFirst_inOrder(fn);
   }
 };
-// Time complexity:
+// Time complexity: log(n);
 
 BinarySearchTree.prototype.traverseDepthFirst_preOrder = function(fn) {
   fn(this);
@@ -117,12 +117,18 @@ BinarySearchTree.prototype.traverseDepthFirst_preOrder = function(fn) {
     this.right.traverseDepthFirst_inOrder(fn);
   }
 };
-// Time complexity:
+// Time complexity: log(n);
 
 BinarySearchTree.prototype.traverseDepthFirst_postOrder = function(fn) {
-  // implement me...
+  if (this.left) {
+    this.left.traverseDepthFirst_inOrder(fn);
+  }
+  if (this.right) {
+    this.right.traverseDepthFirst_inOrder(fn);
+  }
+  fn(this);
 };
-// Time complexity:
+// Time complexity: log(n);
 
 
 BinarySearchTree.prototype.checkIfFull = function() {

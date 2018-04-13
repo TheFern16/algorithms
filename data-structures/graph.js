@@ -92,7 +92,9 @@ function Graph () {
 }
 
 Graph.prototype.addNode = function(value) {
-  // implement me...
+  // find out where we want to add the node
+  // create a new node based on the passed in value
+  // add the new node to that array
 };
 // Time complexity:
 

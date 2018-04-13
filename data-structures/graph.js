@@ -114,7 +114,11 @@ Graph.prototype.contains = function(value) {
 // Time complexity:
 
 Graph.prototype.addEdge = function(value1, value2) {
-  // implement me...
+  if (!this._nodes[value1] || !this._nodes[value2]) {
+    return 'Invalid node value';
+  }
+  this._nodes[value1].push(value2);
+  this._nodes[value2].push(value1);
 };
 // Time complexity:
 

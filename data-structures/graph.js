@@ -123,7 +123,14 @@ Graph.prototype.addEdge = function(value1, value2) {
 // Time complexity:
 
 Graph.prototype.removeEdge = function(value1, value2) {
-  // implement me...
+  if (!this._nodes[value1] || !this._nodes[value2]) {
+    return 'Invalid node value';
+  }
+
+  var value1Neighbors = this._nodes[value1];
+  value1Neighbors.splice(value1Neighbors.indexOf(value2), 1);
+  var value2Neighbors = this._nodes[value2];
+  value2Neighbors.splice(value2Neighbors.indexOf(value1), 1);
 };
 // Time complexity:
 

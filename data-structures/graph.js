@@ -88,13 +88,12 @@ Given a directed graph and two nodes in the graph, write a function that indicat
 
 
 function Graph () {
-  this._nodes = {};
+  this._nodes = [];
 }
 
 Graph.prototype.addNode = function(value) {
-  // find out where we want to add the node
-  // create a new node based on the passed in value
-  // add the new node to that array
+  if (value === undefined) return;
+  this._nodes[value] = this._nodes[value] || [];
 };
 // Time complexity:
 

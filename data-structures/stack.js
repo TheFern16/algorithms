@@ -83,6 +83,9 @@ Stack.prototype.peek = function() {
 // Time complexity: 0(1);
 
 Stack.prototype.count = function() {
+  if (this.index - 1 >= 0) {
+    return this.index;
+  }
 };
 // Time complexity: O(1);
 

@@ -47,3 +47,12 @@ function recursiveMultiplier(arr = [], num = 1, index = 0) {
 }
 
 //6. Write a function 'recursiveReverse' that takes an array and uses recursion to return its contents in reverse
+function recursiveReverse(arr = [], result = [], index = arr.length - 1) {
+  if (index < 0) {
+    return result;
+  } else {
+    result.push(arr[index])
+    index--;
+    return recursiveReverse(arr, result, index);
+  }
+}

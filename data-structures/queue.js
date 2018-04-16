@@ -89,6 +89,11 @@ Queue.prototype.peek = function() {
 // Time complexity: 0(1);
 
 Queue.prototype.count = function() {
+  if (this.size > 0) {
+    return this.size;
+  } else {
+    return `there are no values`;
+  }
 };
 // Time complexity: 0(1);
 

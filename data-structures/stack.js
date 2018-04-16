@@ -76,6 +76,9 @@ Stack.prototype.pop = function() {
 // Time complexity: O(1);
 
 Stack.prototype.peek = function() {
+  if (this.index - 1 >= 0) {
+    return this.storage[this.index - 1];
+  }
 };
 // Time complexity: 0(1);
 

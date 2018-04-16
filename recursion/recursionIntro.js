@@ -7,7 +7,14 @@ function countDown(n = 0) {
 }
 
 //2. Next, try looping just like above except using recursion
-
+function countDownRec(n = 0) {
+  if (n === 0) {
+    return n;
+  } else {
+    console.log(n);
+    return countDownRec(n - 1);
+  }
+}
 
 //3.Write a function 'exponent' that takes two arguments base, and expo, uses a while loop to return the exponenet value of the base.
 

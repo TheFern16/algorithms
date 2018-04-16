@@ -27,6 +27,13 @@ function exponent(base = 0, exp = 0, result = 1) {
 
 
 //4. Write a function 'RecursiveExponent' that takes two arguments base, and expo, recursively returns exponent value of the base.
+function exponentRec(base = 0, exp = 0, result = 1) {
+  if (exp === 0) {
+    return result;
+  } else {
+    return exponentRec(base, exp - 1, result * base);
+  }
+}
 
 
 //5. Write a function 'recursiveMultiplier' that takes two arguments, 'arr and num', and multiplies each arr value into by num and returns an array of the values.

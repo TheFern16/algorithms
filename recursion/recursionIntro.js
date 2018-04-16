@@ -17,6 +17,13 @@ function countDownRec(n = 0) {
 }
 
 //3.Write a function 'exponent' that takes two arguments base, and expo, uses a while loop to return the exponenet value of the base.
+function exponent(base = 0, exp = 0, result = 1) {
+  while (exp > 0) {
+    result = result * (base);
+    exp--;
+  }
+  return result;
+}
 
 
 //4. Write a function 'RecursiveExponent' that takes two arguments base, and expo, recursively returns exponent value of the base.

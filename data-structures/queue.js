@@ -52,48 +52,21 @@ What's the time complexity?
 
 function Queue(capacity) {
   this.storage = {};
-  this.index = 0;
-  this.toBeDequeued = 0;
 }
 
 Queue.prototype.enqueue = function(value) {
-  if (value !== undefined && value !== null) {
-    this.storage[this.index] = value;
-    this.index++;
-  } else {
-    return `Please supply additional value`;
-  }
 };
 // Time complexity: 0(1);
 
 Queue.prototype.dequeue = function() {
-  if (this.index === this.toBeDequeued) {
-    this.index = 0;
-    this.toBeDequeued = 0;
-    return `Queue Empty`;
-  } else if (this.toBeDequeued >= 0) {
-    delete this.storage[this.toBeDequeued];
-    this.toBeDequeued++;
-  }
 };
 // Time complexity: 0(1);
 
 Queue.prototype.peek = function() {
-  if (this.index === this.toBeDequeued) {
-    return `Queue Empty`;
-  } else {
-    let i = this.index;
-    return this.storage[i--];
-  }
 };
 // Time complexity: 0(1);
 
 Queue.prototype.count = function() {
-  if (this.index === this.toBeDequeued) {
-    return `Queue empty`;
-  } else {
-    return this.index - this.toBeDequeued;
-  }
 };
 // Time complexity: 0(1);
 

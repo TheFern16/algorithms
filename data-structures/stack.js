@@ -52,42 +52,21 @@ What's the time complexity?
 
 function Stack(capacity) {
   this.storage = {};
-  this.index = 0;
-  this.count = 0;
 }
 
 Stack.prototype.push = function(value) {
-  if (value !== null && value !== undefined) {
-    this.storage[index] = value;
-    this.index++;
-    this.count++;
-  }
 };
 // Time complexity: O(1);
 
 Stack.prototype.pop = function() {
-  if (this.index > 0) {
-    this.index--;
-    delete this.storage[this.index];
-    this.count--;
-  } else {
-    return `Stack is empty`;
-  }
 };
 // Time complexity: O(1);
 
 Stack.prototype.peek = function() {
-  if (this.index > 0) {
-    let i = this.index;
-    return this.storage[i--];
-  } else {
-    return `Stack is empty`;
-  }
 };
 // Time complexity: 0(1);
 
 Stack.prototype.count = function() {
-  return this.count;
 };
 // Time complexity: O(1);
 

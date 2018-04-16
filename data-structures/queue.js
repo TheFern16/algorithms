@@ -80,6 +80,11 @@ Queue.prototype.dequeue = function() {
 // Time complexity: 0(1);
 
 Queue.prototype.peek = function() {
+  if (this.size >= 0) {
+    return this.storage[this.toBeDequeued];
+  } else {
+    return `there are no values`;
+  }
 };
 // Time complexity: 0(1);
 

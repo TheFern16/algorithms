@@ -33,11 +33,10 @@ now repeat for next unsorted element
 // finds the smallest element in the array, and then pushes it into the new array
 
 function insertionSort(arr, result = []) {
-  // if arr.length === 0
-    // return result
-  // find the smallest element in the array
-    // save the value to a variable
-    // push it into the result array
-    // remove that value from arr
-    // recurse(arr, result);
+  if (arr.length === 0) return result;
+  let smallest = Math.min.apply(null, arr);
+  let findIndex = arr.findIndex(num => num === smallest);
+  result.push(smallest);
+  arr.splice(findIndex, 1);
+  return insertionSort(arr, result);
 }

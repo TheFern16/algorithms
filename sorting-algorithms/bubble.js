@@ -20,12 +20,15 @@ Variants:
 
 */
 
-function bubbleSort(arr, sorted) {
-  // if sorted === false
-    // return arr;
-  // for (var i = 0)
-    // if currentVal > nextVal
-      // swap them
-      // sorted = true
-  // return sorted === true ? bubbleSort(arr, true) : bubbleSort(arr, false);
+function bubbleSort(arr, sorted = false) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i+1]) {
+      let currentVal = arr[i];
+      arr[i] = arr[i+1];
+      arr[i+1] = currentVal;
+      sorted = true;
+    }
+  }
+
+  return sorted === true ? bubbleSort(arr, false) : arr;
 }

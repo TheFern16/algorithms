@@ -29,3 +29,15 @@ now repeat for next unsorted element
 (https://en.wikipedia.org/wiki/Shellsort)
 
 */
+
+// finds the smallest element in the array, and then pushes it into the new array
+
+function insertionSort(arr, result = []) {
+  // if arr.length === 0
+    // return result
+  // find the smallest element in the array
+    // save the value to a variable
+    // push it into the result array
+    // remove that value from arr
+    // recurse(arr, result);
+}

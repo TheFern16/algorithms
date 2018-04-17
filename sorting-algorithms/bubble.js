@@ -19,3 +19,13 @@ Variants:
 (https://en.wikipedia.org/wiki/Cocktail_sort)
 
 */
+
+function bubbleSort(arr, sorted) {
+  // if sorted === false
+    // return arr;
+  // for (var i = 0)
+    // if currentVal > nextVal
+      // swap them
+      // sorted = true
+  // return sorted === true ? bubbleSort(arr, true) : bubbleSort(arr, false);
+}

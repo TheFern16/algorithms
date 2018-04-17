@@ -28,3 +28,12 @@ Stable Variant
 - Implement selection sort for a linked list (you can use your data structure implemention from earlier in the course). How does this impact performance and stability?
 
 */
+
+function selectionSort(arr, result = []) {
+  if (arr.length === 0) return result.reverse();
+  let max = Math.max.apply(null, arr);
+  let idx = arr.findIndex(num => num === max);
+  arr.splice(idx, 1);
+  result.push(max)
+  return selectionSort(arr, result);
+};

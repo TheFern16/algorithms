@@ -98,12 +98,12 @@ LinkedList.prototype.forEach = function(callback) {
   }
   return this;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.print = function() {
-  // implement me...
+  return this.forEach((v => console.log(v)))
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.insertAfter = function(node, value) {
   // implement me...

@@ -45,15 +45,29 @@ function Node (value) {
 }
 
 Tree.prototype.addChild = function(value) {
-  if (value) return new Node(value);
+  var newNode = new Tree(value);
+  this.children.push(newNode);
+  return newNode;
 };
 // Time complexity: O(1);
 
 
 Tree.prototype.contains = function(value) {
-  // implement me...
+  let result;
+
+  (function search(currentNode) {
+    if (currentNode.value === value) {
+      result = true;
+      return;
+    };
+    currentNode.children.forEach(child => {
+      search(child);
+    })
+  })(this);
+
+  return result ? result : false;
 };
-// Time complexity:
+// Time complexity: n^2
 
 
 Tree.prototype.traverseDepthFirst = function(fn) {

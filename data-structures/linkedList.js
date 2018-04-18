@@ -109,14 +109,20 @@ LinkedList.prototype.insertAfter = function(node, value) {
   let currentNode = this.head;
 
   while (currentNode) {
-    if (currentNode.value === value && currentNode.next !== null) {
+    if (currentNode.value === value && currentNode.next === null) {
       currentNode.next = node;
-      return;
+      return `Inserted.`;
+    } else if (currentNode.value === value && currentNode.next !== null) {
+      let temp = currentNode.next;
+      currentNode.next = node;
+      currentNode.next.next = temp;
+      return `Inserted.`;
     } else {
       currentNode = currentNode.next;
     }
   }
 };
+
 // Time complexity: O(n);
 
 LinkedList.prototype.removeAfter = function(node) {

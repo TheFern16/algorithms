@@ -39,8 +39,9 @@ https://en.wikipedia.org/wiki/Trie
 
 */
 
-function Tree (value) {
-  // implement me...
+function Node (value) {
+  this.value = value;
+  this.children = [];
 }
 
 Tree.prototype.addChild = function(value) {

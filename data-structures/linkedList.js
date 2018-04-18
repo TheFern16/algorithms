@@ -106,9 +106,18 @@ LinkedList.prototype.print = function() {
 // Time complexity: O(n);
 
 LinkedList.prototype.insertAfter = function(node, value) {
-  // implement me...
+  let currentNode = this.head;
+
+  while (currentNode) {
+    if (currentNode.value === value && currentNode.next !== null) {
+      currentNode.next = node;
+      return;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.removeAfter = function(node) {
   // implement me...

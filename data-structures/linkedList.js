@@ -248,4 +248,21 @@ LinkedList.prototype.removeBefore = function(node) {
 --------
 1 1 5 6   (1 -> 1 -> 5 -> 6)
 
+const newLinkedList = new LinkedList(3);
+newLinkedList.head.next = new Node(5);
+newLinkedList.forEach((v => v + 1));
+newLinkedList.insertAfter(new Node(12), 6);
+newLinkedList.insertAfter(new Node(4), 12);
+newLinkedList.insertAfter(new Node(3), 4);
+newLinkedList.removeAfter(new Node(6));
+newLinkedList.insertHead(10);
+newLinkedList.removeHead();
+newLinkedList.findNode(4)
+newLinkedList.insertBefore(new Node(15), 3);
+newLinkedList.removeBefore(new Node(12));
+newLinkedList.print();
+
+
  */
+
+

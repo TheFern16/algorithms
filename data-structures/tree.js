@@ -45,9 +45,9 @@ function Node (value) {
 }
 
 Tree.prototype.addChild = function(value) {
-  // implement me...
+  if (value) return new Node(value);
 };
-// Time complexity:
+// Time complexity: O(1);
 
 
 Tree.prototype.contains = function(value) {

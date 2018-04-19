@@ -58,7 +58,7 @@ function BinarySearchTree (value) {
 }
 
 BinarySearchTree.prototype.insert = function(value) {
-  if (value < this.value) {
+  if (value <= this.value) {
     if (this.left !== null) {
       this.left.insert(value);
     } else {
@@ -75,7 +75,10 @@ BinarySearchTree.prototype.insert = function(value) {
 // Time complexity: O(log)n
 
 BinarySearchTree.prototype.contains = function(value) {
-  // implement me...
+  // recurse through the entire tree to find the value
+  // if found return
+
+  //
 };
 // Time complexity:
 

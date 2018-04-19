@@ -67,16 +67,26 @@ Tree.prototype.contains = function(value) {
 
   return result ? result : false;
 };
-// Time complexity: n^2
+// Time complexity: O(n);
 
 
 Tree.prototype.traverseDepthFirst = function(fn) {
-  // implement me...
-};
-// Time complexity:
+  this.children.forEach(function(child) {
+    child.traverseDepthFirst(fn);
+  });
+  fn(this);
+}
+// Time complexity: O(n);
 
 
 Tree.prototype.traverseBreadthFirst = function(fn) {
-  // implement me...
+  const queue = [this];
+  while (queue.length) {
+    const node = queue.shift();
+    fn(node.value);
+    node.children.forEach(function(child) {
+      queue.push(child);
+    });
+  }
 };
-// Time complexity:
+// Time complexity: O(n);

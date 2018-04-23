@@ -24,3 +24,17 @@ function countDownRec(num) {
  console.log(num);
  return num === 0 ? num : countDownRec(num - 1);
 };
+
+function exponent(base, exp) {
+  let result = 1;
+
+  while (exp > 0) {
+    result = result * base;
+    exp = exp - 1;
+  }
+  return result;
+};
+
+function exponentRec(base, exp, result = 1) {
+  return exp === 0 ? result : exponentRec(3, exp - 1, result * base);
+};

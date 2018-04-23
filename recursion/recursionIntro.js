@@ -38,3 +38,8 @@ function exponent(base, exp) {
 function exponentRec(base, exp, result = 1) {
   return exp === 0 ? result : exponentRec(3, exp - 1, result * base);
 };
+
+function recursiveMultipler(arr = [], num = 1, index = 0) {
+  if (arr[index]) arr[index] = arr[index] * num;
+  return index < arr.length - 1 ? recursiveMultipler(arr, num, index += 1) : arr;
+}

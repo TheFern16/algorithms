@@ -75,6 +75,11 @@ Stack.prototype.pop = function() {
 // Time complexity: O(1);
 
 Stack.prototype.peek = function() {
+  if (this.index > 0) {
+    return this.storage[this.index--];
+  } else {
+    return `Stack is empty.`
+  }
 };
 // Time complexity: 0(1);
 

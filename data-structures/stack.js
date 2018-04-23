@@ -54,7 +54,7 @@ function Stack(capacity) {
   this.storage = {};
   this.index = 0;
   this.capacity = capacity;
-}
+};
 
 Stack.prototype.push = function(value) {
   if (this.index < this.capacity) {
@@ -65,6 +65,12 @@ Stack.prototype.push = function(value) {
 // Time complexity: O(1);
 
 Stack.prototype.pop = function() {
+  if (this.index > 0) {
+    delete this.storage[this.index - 1];
+    this.index--;
+  } else {
+    `Stack Empty`;
+  }
 };
 // Time complexity: O(1);
 

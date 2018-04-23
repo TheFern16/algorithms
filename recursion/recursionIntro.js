@@ -18,4 +18,9 @@ function countDown(n) {
     console.log(n);
     n -= 1;
   }
-}
+};
+
+function countDownRec(num) {
+ console.log(num);
+ return num === 0 ? num : countDownRec(num - 1);
+};

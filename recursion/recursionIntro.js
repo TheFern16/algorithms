@@ -42,4 +42,9 @@ function exponentRec(base, exp, result = 1) {
 function recursiveMultipler(arr = [], num = 1, index = 0) {
   if (arr[index]) arr[index] = arr[index] * num;
   return index < arr.length - 1 ? recursiveMultipler(arr, num, index += 1) : arr;
+};
+
+function recursiveReverse(arr = [], index = arr.length - 1, result = []) {
+  if (arr[index]) result.push(arr[index]);
+  return index > 0 ? recursiveReverse(arr, index -= 1, result) : result;
 }

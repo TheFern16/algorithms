@@ -61,6 +61,9 @@ Queue.prototype.enqueue = function(value) {
   if (this.index < this.capacity) {
     this.storage[this.index] = value;
     this.index++;
+  } else if (this.index === this.toBeDeQueued) {
+    this.index = 0;
+    this.toBeDeQueued = 0;
   } else {
     return `Queue is full.`;
   }
@@ -68,6 +71,20 @@ Queue.prototype.enqueue = function(value) {
 // Time complexity: 0(1);
 
 Queue.prototype.dequeue = function() {
+  if (this.index > 0) {
+    if (this.index - this.toBeDeQueued > 0) {
+      delete this.storage[this.toBeDeQueued];
+      this.toBeDeQueued++;
+    } else {
+      this.toBeDeQueued = 0;
+      this.index = 0;
+    }
+  } else if (this.index === this.toBeDeQueued) {
+    this.toBeDeQueued = 0;
+    this.index = 0;
+  } else {
+    return `Cannot be dequeued.`;
+  }
 };
 // Time complexity: 0(1);
 

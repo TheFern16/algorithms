@@ -12,3 +12,10 @@
 //5. Write a function 'recursiveMultiplier' that takes two arguments, 'arr and num', and multiplies each arr value into by num and returns an array of the values.
 
 //6. Write a function 'recursiveReverse' that takes an array and uses recursion to return its contents in reverse
+
+function countDown(n) {
+  while (n > 0) {
+    console.log(n);
+    n -= 1;
+  }
+}

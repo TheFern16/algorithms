@@ -84,6 +84,11 @@ Stack.prototype.peek = function() {
 // Time complexity: 0(1);
 
 Stack.prototype.count = function() {
+  if (ths.index > 0) {
+    return this.index - 1;
+  } else {
+    return `Stack is empty.`;
+  }
 };
 // Time complexity: O(1);
 

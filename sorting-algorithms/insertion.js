@@ -29,3 +29,20 @@ now repeat for next unsorted element
 (https://en.wikipedia.org/wiki/Shellsort)
 
 */
+
+function insertionSort(arr = [], result = []) {
+  // selects the first element in the array and pushes it into the correct order
+  // if arr.length === 0
+    // return result;
+  // let firstValue = arr.splice(0, 1);
+  // if (result.legth === 0)
+    // result.push(firstValue);
+    // insertionSort(arr, result);
+  // iterate through the length of the result array
+    // if firstValue > arr[i]
+      // let before = arr.slice(0, i);
+      // let after = arr.slice(i, result.length - 1);
+      // return insertionSort(arr,  [before, after])
+
+
+}

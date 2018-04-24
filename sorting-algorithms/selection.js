@@ -30,11 +30,10 @@ Stable Variant
 */
 
 function selectionSort(arr = [], result = []) {
-  // if (arr.length === 0)
-    // return result
-  // let smallestNum = Math.min.apply(null, arr);
-  // let findIndexOfSmallestNum = arr.findIndex(num => num === smallestNum);
-  // arr.slice(findIndexOfSmallestNum, 1);
-  // result.push(smallestNum);
-  // selectionSort(arr, result);
+  if (arr.length === 0) return result;
+  let smallestNum = Math.min.apply(null, arr);
+  let findIndexOfSmallestNum = arr.findIndex(num => num === smallestNum);
+  arr.splice(findIndexOfSmallestNum, 1);
+  result.push(smallestNum);
+  return selectionSort(arr, result);
 }

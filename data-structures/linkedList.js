@@ -189,9 +189,19 @@ LinkedList.prototype.appendToTail = function(value) {
 // PART 2:
 
 LinkedList.prototype.insertBefore = function(node, value) {
-  // implement me...
+  let currentNode = this.head;
+  while (currentNode) {
+    if (currentNode.next.value === node.value) {
+      let temp = currentNode.next;
+      currentNode.next = new Node(value);
+      currentNode.next.next = temp;
+      return;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.removeBefore = function(node) {
   // implement me...

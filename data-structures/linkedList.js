@@ -204,9 +204,19 @@ LinkedList.prototype.insertBefore = function(node, value) {
 // Time complexity: O(n);
 
 LinkedList.prototype.removeBefore = function(node) {
-  // implement me...
+  let currentNode = this.head;
+  while (currentNode) {
+    if (currentNode.next.next.value === node.value && node.value !== this.head.value) {
+      let temp = currentNode.next.next;
+      delete currentNode.next;
+      currentNode.next = temp;
+      return;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
 };
-// Time complexity:
+// Time complexity: O(n);
 
 
 
@@ -232,5 +242,22 @@ LinkedList.prototype.removeBefore = function(node) {
 + 7 3 1        (7 -> 3 -> 1)
 --------
 1 1 5 6   (1 -> 1 -> 5 -> 6)
+
+const ll = new LinkedList(10);
+ll.head.next = new Node(5);
+ll.head.next.next = new Node(7);
+ll.head.next.next.next = new Node(20);
+ll.insertAfter(new Node(5), 16);
+ll.insertAfter(new Node(20), 2);
+ll.forEach((v) => v + 1)
+ll.removeAfter(new Node(17))
+ll.insertHead(2)
+ll.removeHead();
+ll.findNode(2);
+ll.appendToTail(20);
+ll.insertBefore(new Node(20), 16);
+ll.removeBefore(new Node(17))
+ll.print();
+
 
  */

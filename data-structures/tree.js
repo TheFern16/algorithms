@@ -50,9 +50,18 @@ Tree.prototype.addChild = function(value) {
 // Time complexity: O(1);
 
 Tree.prototype.contains = function(value) {
-  // implement me...
+  let result = false;
+
+  (function search(currentNode) {
+    if (currentNode.value === value) return result = true;
+    currentNode.children.forEach(child => {
+      search(child);
+    });
+  })(this)
+
+  return result;
 };
-// Time complexity:
+// Time complexity: O(n^2)
 
 
 Tree.prototype.traverseDepthFirst = function(fn) {

@@ -78,7 +78,7 @@ Stack.prototype.pop = function() {
 
 Stack.prototype.peek = function() {
   if (this.index > 0) {
-    return this.storage[this.index--];
+    return this.storage[this.index-1];
   } else {
     return `the stack is empty.`;
   }

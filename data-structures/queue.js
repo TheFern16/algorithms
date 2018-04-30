@@ -82,6 +82,11 @@ Queue.prototype.dequeue = function() {
 // Time complexity: 0(1);
 
 Queue.prototype.peek = function() {
+  if (this.index > 0) {
+    return this.storage[this.index-1]
+  } else {
+    return `the queue is empty.`;
+  }
 };
 // Time complexity: 0(1);
 

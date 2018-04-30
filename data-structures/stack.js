@@ -52,9 +52,17 @@ What's the time complexity?
 
 function Stack(capacity) {
   this.storage = {};
+  this.capacity = capacity;
+  this.index = 0;
 }
 
 Stack.prototype.push = function(value) {
+  if (this.index < this.capacity) {
+    this.storage[this.index] = value;
+    this.index++;
+  } else {
+    return `cannot be pushed into the stack.`
+  }
 };
 // Time complexity: O(1);
 

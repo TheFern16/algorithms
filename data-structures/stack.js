@@ -77,10 +77,20 @@ Stack.prototype.pop = function() {
 // Time complexity: O(1);
 
 Stack.prototype.peek = function() {
+  if (this.index > 0) {
+    return this.storage[this.index--];
+  } else {
+    return `the stack is empty.`;
+  }
 };
 // Time complexity: 0(1);
 
 Stack.prototype.count = function() {
+  if (this.index > 0) {
+    return this.index - 1;
+  } else {
+    return `the stack is empty.`;
+  }
 };
 // Time complexity: O(1);
 

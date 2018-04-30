@@ -91,6 +91,11 @@ Queue.prototype.peek = function() {
 // Time complexity: 0(1);
 
 Queue.prototype.count = function() {
+  if (this.index > 0) {
+    return this.index - 1;
+  } else {
+    return `the queue is empty.`;
+  }
 };
 // Time complexity: 0(1);
 

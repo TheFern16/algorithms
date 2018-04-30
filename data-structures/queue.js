@@ -58,6 +58,12 @@ function Queue(capacity) {
 }
 
 Queue.prototype.enqueue = function(value) {
+  if (this.index < this.capacity) {
+    this.storage[this.index] = value;
+    this.index++;
+  } else {
+    return `cannot be enqueued.`;
+  }
 };
 // Time complexity: 0(1);
 

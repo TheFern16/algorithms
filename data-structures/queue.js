@@ -68,6 +68,16 @@ Queue.prototype.enqueue = function(value) {
 // Time complexity: 0(1);
 
 Queue.prototype.dequeue = function() {
+  if (this.index > 0) {
+    delete this.storage[this.toBeDequeued];
+    this.toBeDequeued++;
+    if (this.index - this.toBeDequeued <= 0) {
+      this.toBeDequeued = 0;
+      this.index = 0;
+    }
+  } else {
+    return `cannot be dequeued.`;
+  }
 };
 // Time complexity: 0(1);
 

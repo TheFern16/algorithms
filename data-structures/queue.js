@@ -52,6 +52,9 @@ What's the time complexity?
 
 function Queue(capacity) {
   this.storage = {};
+  this.index = 0;
+  this.toBeDequeued = 0;
+  this.capacity = capacity;
 }
 
 Queue.prototype.enqueue = function(value) {

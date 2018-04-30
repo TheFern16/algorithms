@@ -67,6 +67,12 @@ Stack.prototype.push = function(value) {
 // Time complexity: O(1);
 
 Stack.prototype.pop = function() {
+  if (this.index > 0) {
+    this.index--;
+    delete this.storage[this.index];
+  } else {
+    return `cannot be popped from the stack.`;
+  }
 };
 // Time complexity: O(1);
 

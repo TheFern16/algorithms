@@ -29,11 +29,15 @@ now repeat for next unsorted element
 (https://en.wikipedia.org/wiki/Shellsort)
 
 */
-function selectionSort(arr = [], result = []) {
-  if (arr.length === 0) return result;
-  let smallestVal = Math.min.apply(null, arr);
-  result.push(smallestVal);
-  let findSmallest = arr.findIndex(value => value === smallestVal);
-  arr.splice(findSmallest, 1);
-  return selectionSort(arr, result);
+
+function insertionSort (items) {
+  for (var i = 0; i < items.length; i++) {
+    let value = items[i]
+    for (var j = i - 1; j > -1 && items[j] > value; j--) {
+      items[j + 1] = items[j]
+    }
+    items[j + 1] = value
+  }
+
+  return list
 }

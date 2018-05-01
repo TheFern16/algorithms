@@ -28,3 +28,11 @@ Stable Variant
 - Implement selection sort for a linked list (you can use your data structure implemention from earlier in the course). How does this impact performance and stability?
 
 */
+function selectionSort(arr = [], result = []) {
+  if (arr.length === 0) return result;
+  let smallestVal = Math.min.apply(null, arr);
+  result.push(smallestVal);
+  let findSmallest = arr.findIndex(value => value === smallestVal);
+  arr.splice(findSmallest, 1);
+  return selectionSort(arr, result);
+}

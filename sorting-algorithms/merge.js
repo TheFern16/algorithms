@@ -29,16 +29,16 @@ subarrays for natural merge sort: [ [1,2], [4,5], [9] ]
 
 general plan
 
-mergesortRec
-  if arr.length === 1 return arr;
-  split the array into two halves
-  left = arr.slice(0, arr.length / 2);
-  right = arr.slice(arr.length / 2)
+// mergesortRec
+  // if arr.length === 1 return arr;
+  // split the array into two halves
+  // left = arr.slice(0, arr.length / 2);
+  // right = arr.slice(arr.length / 2)
 
-  sortLeft = split the two halfs again
-  sortRight = split the two halfs again
+  // sortLeft = mergeSortRec(left);
+  // sortRight = mergeSortRec(right);
 
-  return whatever is returned from merge
+  // return sortAndMerge(sortLeft, sortRight) (connects the base case to the top of the tree)
 
 sortAndMerge(left, right)
   // result
@@ -63,23 +63,27 @@ sortAndMerge(left, right)
       // while loop goes back around
 
 
+// whatever is returned from the sortLeft, sortRight variable assignment (using recursion)
+    // is passed into the sortAndMerge
+    // a stack will be built up until the length of the passed in array === 1
+    // once satisfied the stack will go back up towards t he top of the tree until every sortLeft, and sortRight variable assignment is resolved.
+    // this means the base case is hit several times
+    // it is faster than a normal sort because we split it up the original array until we get a length of 1
+    // so ideally we are comparing an array of two sides (left, and right) in near constant time.
+    // that means as the stack continues to resolve the comparisons will happen much faster as the stack nears completion because the arrays that are being returned are already sorted.
+
 */
 function mergeSort(arr = []) {
   if (arr.length <= 1) return arr;
   const left = arr.slice(0, arr.length / 2);
   const right = arr.slice(arr.length / 2);
-
   const lSorted = mergeSortRec(left);
   const rSorted = mergeSortRec(right);
 
   return sortAndMerge(lSorted, rSorted);
 }
 
-function sortAndMerge(l, r) {
-  let result = [];
-  let leftIndex = 0;
-  let rightIndex = 0;
-
+function sortAndMerge(l, r, leftIndex = 0, rightIndex = 0, result = []) {
   while (result.length < (l.length + r.length)) {
     if (leftIndex === l.length) {
       result = result.concat(r.slice(rightIndex));

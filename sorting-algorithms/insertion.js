@@ -29,3 +29,11 @@ now repeat for next unsorted element
 (https://en.wikipedia.org/wiki/Shellsort)
 
 */
+function selectionSort(arr = [], result = []) {
+  if (arr.length === 0) return result;
+  let smallestVal = Math.min.apply(null, arr);
+  result.push(smallestVal);
+  let findSmallest = arr.findIndex(value => value === smallestVal);
+  arr.splice(findSmallest, 1);
+  return selectionSort(arr, result);
+}

@@ -221,6 +221,20 @@ LinkedList.prototype.removeBefore = function(node) {
 /*
 *** Exercises:
 
+const newL = new LinkedList(3);
+newL.head.next = new Node(5);
+newL.head.next.next = new Node(10);
+newL.forEach(val => val + 1);
+newL.insertAfter(new Node(6), 17);
+newL.insertAfter(new Node(11), 27);
+newL.insertAfter(new Node(4), 16);
+newL.removeAfter(new Node(4))
+newL.insertHead(16);
+newL.removeHead();
+newL.findNode(27);
+newL.insertBefore(new Node(6), 16);
+
+
 1. Implement a stack using a linked list.
 
 2. Implement a queue using a linked list.

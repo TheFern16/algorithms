@@ -150,8 +150,13 @@ LinkedList.prototype.insertHead = function(value) {
 // Time complexity: O(1);
 
 LinkedList.prototype.removeHead = function() {
-  // implement me...
+  if (this.head) {
+    this.head = this.head.next;
+  } else {
+    return `cannot remove head.`;
+  }
 }
+// Time complexity: O(1);
 
 LinkedList.prototype.findNode = function(value) {
   // implement me...

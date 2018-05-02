@@ -159,9 +159,18 @@ LinkedList.prototype.removeHead = function() {
 // Time complexity: O(1);
 
 LinkedList.prototype.findNode = function(value) {
-  // implement me...
+  let result;
+  this.forEach((val) => {
+    if (val === value) {
+      result = true;
+      return val;
+    } else {
+      return val;
+    }
+  })
+  return result ? true : false;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.appendToTail = function(value) {
   // implement me...

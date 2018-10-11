@@ -7,25 +7,34 @@ function countDown(n = 0) {
 }	
 
 //2. Next, try looping just like above except using recursion
-// use a default parameter again
-// if the current n === 0
-  // return
-// else
-  // console.log(n)
-  // return func(n -= 1);
 function countDownRec(n = 0) {
 	if (n > 0) {
-		return
+		return countDownRec(n -= 1);
 	} else {
 		console.log(n);
-		return countDownRec(n -= 1);
+		return
 	}
 }
 
 //3.Write a function 'exponent' that takes two arguments base, and expo, uses a while loop to return the exponenet value of the base.
-
+function exponent(base = 1, exp = 1) {
+	let remainingCycles = exp >= 1 ? exp : 1;
+	let remainder = base >= 1 ? exp : 1;
+	while(remainingCycles > 0) {
+		console.log(remainder);
+		remainder = remainder * base;
+		remainingCycles--
+	}
+}
 
 //4. Write a function 'RecursiveExponent' that takes two arguments base, and expo, recursively returns exponent value of the base.
+function recursiveExponent(base = 1, exp = 1, result = base, cycles = exp) {
+	if (cycles > 0) {
+		return recursiveExponent(base, exp, result *= base, cycles -= 1)
+	} else {
+		return result
+	}
+}
 
 
 //5. Write a function 'recursiveMultiplier' that takes two arguments, 'arr and num', and multiplies each arr value into by num and returns an array of the values.

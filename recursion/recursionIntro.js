@@ -50,3 +50,35 @@ function recursiveMultiplier(arr = [], num = 1, index = 0) {
 
 
 //6. Write a function 'recursiveReverse' that takes an array and uses recursion to return its contents in reverse
+function recursiveReverse(arr = [], index = arr.length - 1, result = []) {
+  if (!Array.isArray(arr) || arr.length === 0) return result;
+  if (index < 0) {
+    return result;
+  } else {
+    result.push(arr[index])
+    index--;
+    return recursiveReverse(arr, index, result);
+  }
+}
+
+// create a result array
+// create an index which will be equal to the lenght of the input array - 1;
+// while the index is greater than or equal to zero I will continue to push the current value into ther esult array
+// and then
+// once it is less than 0 I will return the result array
+
+// if (arr.length === 0) return || typeof arr === 'object' return arr
+// if (index < 0) return 
+// else 
+  // result.push(arr[index])
+  // index--
+  // recursiveReverse(arr, index, result);
+
+
+// input is an array
+// out put is an array of the contents reversed 
+// edge cases where an array does not exist or if an object is supplied instead of an array 
+
+
+
+

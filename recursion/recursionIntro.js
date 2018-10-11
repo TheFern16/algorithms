@@ -1,7 +1,26 @@
 //1. Write a function that loops through the numbers n down to 0. If you haven't done so try using a while loop to do this.
+function countDown(n = 0) {
+  while (n > 0) {
+  	console.log(n);
+  	n -= 1;
+  }
+}	
 
 //2. Next, try looping just like above except using recursion
-
+// use a default parameter again
+// if the current n === 0
+  // return
+// else
+  // console.log(n)
+  // return func(n -= 1);
+function countDownRec(n = 0) {
+	if (n > 0) {
+		return
+	} else {
+		console.log(n);
+		return countDownRec(n -= 1);
+	}
+}
 
 //3.Write a function 'exponent' that takes two arguments base, and expo, uses a while loop to return the exponenet value of the base.
 

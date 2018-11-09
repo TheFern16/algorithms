@@ -91,10 +91,19 @@ function LinkedList(headValue) {
 }
 
 LinkedList.prototype.forEach = function(callback) {
+  let currentNode = this.head;
+  while(currentNode) {
+    currentNode.value = callback(currentNode.value);
+    currentNode = currentNode.next;
+  }
 // Time complexity: 0(n);
 }
 
 LinkedList.prototype.print = function() {
+  return this.forEach((nodeValue) => {
+    console.log(nodeValue)
+    return nodeValue
+  })
 };
 // Time complexity: O(n);
 
@@ -115,9 +124,18 @@ LinkedList.prototype.insertAfter = function(node, value) {
 // Time complexity: O(n);
 
 LinkedList.prototype.removeAfter = function(node) {
-  // implement me...
+  let currentNode = this.head;
+  while(currentNode) {
+    if (currentNode.value === node.value) {
+      let temp = currentNode.next.next;
+      currentNode.next = temp;
+      currentNode = currentNode.next;
+    } else {
+      currentNode = currentNode.next;
+    }
+  }
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.insertHead = function(value) {
   // implement me...

@@ -94,6 +94,7 @@ Stack.prototype.pop = function() {
 // Time complexity: O(1);
 
 Stack.prototype.peek = function() {
+	return this.storage[this.index - 1];
 };
 // Time complexity: 0(1);
 

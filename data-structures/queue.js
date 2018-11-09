@@ -45,16 +45,39 @@ myQueue.until(7)
 => 3
 What's the time complexity?
 
+index continues to rise (up to capacity) while the toberemoved stays at 0
+upon being dqueued increase the tobqd 
+if tobdqd is === index then set both back to 0
 
+FIFO
 
+enqueue
+index = 0
+toberemoved = 0
+val = 1
+
+index = 1
+toberemoved = 0
+val = 10
+
+index = 2
+toberemoved = 0
+val 3
 
  */
 
 function Queue(capacity) {
   this.storage = {};
+  this.capacity = capacity;
+  this.index = 0;
+  this.tobdqd = 0;
 }
 
 Queue.prototype.enqueue = function(value) {
+  if (typeof value !== 'object' && typeof value !== null && this.index < this.capacity) {
+  	this.storage[this.index] = value;
+  	this.index++
+  }
 };
 // Time complexity: 0(1);
 

@@ -50,22 +50,6 @@ LIFO - LAST IN FIRST OUT
 
  */
 
-// 3
-// index = 0
-// to be popped = 0
-
-// 4
-// index = 1
-
-// 5
-// index = 2
-
-// pop
-// index = 1
-
-// pop 
-// index = 0
-
 function Stack(capacity) {
 	this.capacity = capacity;
   this.storage = {};

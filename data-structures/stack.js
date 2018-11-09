@@ -81,10 +81,15 @@ Stack.prototype.push = function(value) {
 // Time complexity: O(1);
 
 Stack.prototype.pop = function() {
-	// 
-	// looks at the current index and pops the number that is the lowest indexed value
-	// pop until index is less than 0
-	// if it is less than 0 you can't pop 
+	if (this.index > 0) {
+		let tempIndex = this.index - 1;
+		delete this.storage[tempIndex];
+		this.index = tempIndex;
+	} else if (this.index === 0) {
+		let tempIndex = this.index;
+		delete this.storage[tempIndex];
+		this.index = tempIndex;
+	}
 };
 // Time complexity: O(1);
 

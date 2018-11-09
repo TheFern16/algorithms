@@ -97,10 +97,10 @@ LinkedList.prototype.forEach = function(callback) {
     currentNode = currentNode.next;
   }
 };
-// Time complexity:
+// Time complexity: 0(n);
 
 LinkedList.prototype.print = function() {
-  // implement me...
+  return this.forEach(nodeValue => console.log(nodeValue));
 };
 // Time complexity:
 

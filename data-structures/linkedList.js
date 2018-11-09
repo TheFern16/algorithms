@@ -138,7 +138,10 @@ LinkedList.prototype.removeAfter = function(node) {
 // Time complexity: O(n);
 
 LinkedList.prototype.insertHead = function(value) {
-  // implement me...
+  let newNode = new Node(value);
+  let temp = this.head;
+  this.head = newNode;
+  this.head.next = temp;
 };
 // Time complexity:
 

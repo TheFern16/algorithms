@@ -82,6 +82,14 @@ Queue.prototype.enqueue = function(value) {
 // Time complexity: 0(1);
 
 Queue.prototype.dequeue = function() {
+  if (this.index < this.capacity && this.index > this.tobdqd) {
+  	delete this.storage[this.tobdqd];
+  	this.tobdqd++;
+  } else if (this.index === this.tobdqd) {
+  	delete this.storage[this.tobdqd];
+  	this.index = 0;
+  	this.tobdqd = 0;
+  }
 };
 // Time complexity: 0(1);
 

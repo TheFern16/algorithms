@@ -99,6 +99,7 @@ Stack.prototype.peek = function() {
 // Time complexity: 0(1);
 
 Stack.prototype.count = function() {
+	return this.index - 1 < 0 ? 'The Current Stack is Empty... 50rr7 d00d.' : `${this.index-1} values in the Stack.`;
 };
 // Time complexity: O(1);
 

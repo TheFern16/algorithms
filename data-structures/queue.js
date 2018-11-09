@@ -94,6 +94,7 @@ Queue.prototype.dequeue = function() {
 // Time complexity: 0(1);
 
 Queue.prototype.peek = function() {
+	return this.storage[this.tobdqd] === undefined ? 'The Queue is Empty.' : this.storage[this.tobdqd];
 };
 // Time complexity: 0(1);
 

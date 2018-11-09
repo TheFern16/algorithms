@@ -91,7 +91,11 @@ function LinkedList(headValue) {
 }
 
 LinkedList.prototype.forEach = function(callback) {
-  // implement me...
+  let currentNode = this;
+  while(currentNode.next !== null) {
+    currentNode.value = callback(currentNode.value);
+    currentNode = currentNode.next;
+  }
 };
 // Time complexity:
 

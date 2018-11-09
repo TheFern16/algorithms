@@ -46,19 +46,45 @@ myStack.until(7)
 => 4
 What's the time complexity?
 
-
+LIFO - LAST IN FIRST OUT 
 
  */
 
+// 3
+// index = 0
+// to be popped = 0
+
+// 4
+// index = 1
+
+// 5
+// index = 2
+
+// pop
+// index = 1
+
+// pop 
+// index = 0
+
 function Stack(capacity) {
+	this.capacity = capacity;
   this.storage = {};
+  this.index = 0;
 }
 
 Stack.prototype.push = function(value) {
+	if (typeof value !== 'object' && typeof value !== null && this.index < this.capacity) {
+		this.storage[this.index] = value;
+		this.index++;
+	}
 };
 // Time complexity: O(1);
 
 Stack.prototype.pop = function() {
+	// 
+	// looks at the current index and pops the number that is the lowest indexed value
+	// pop until index is less than 0
+	// if it is less than 0 you can't pop 
 };
 // Time complexity: O(1);
 

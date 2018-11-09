@@ -157,15 +157,27 @@ LinkedList.prototype.findNode = function(value) {
     if (nodeValue === value) {
       result = true;
     }
+    return nodeValue;
   });
   return result;
 };
 // Time complexity: O(n);
 
 LinkedList.prototype.appendToTail = function(value) {
-  // implement me...
+  let newNode = new Node(value);
+  let currentNode = this.head;
+
+  while(currentNode) {
+    if (currentNode.next === null) {
+      currentNode.next = newNode;
+      currentNode = currentNode.next;
+      break
+    } else {
+      currentNode = currentNode.next;    
+    }
+  }
 };
-// Time complexity:
+// Time complexity: O(n);
 
 
 // PART 2:

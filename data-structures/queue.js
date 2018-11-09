@@ -99,6 +99,8 @@ Queue.prototype.peek = function() {
 // Time complexity: 0(1);
 
 Queue.prototype.count = function() {
+	let size = this.index - this.tobdqd;
+	return `${size} primitive values are in the Queue.`;
 };
 // Time complexity: 0(1);
 

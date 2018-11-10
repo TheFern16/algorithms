@@ -37,16 +37,21 @@ Given treeA and treeB, check if treeB is a subtree of treeA (meaning that there 
 Given a dictionary, create a prefix tree (commonly known as a trie)
 https://en.wikipedia.org/wiki/Trie
 
+
+
+
 */
 
 function Tree (value) {
-  // implement me...
+	this.value = value;
+	this.children = [];
 }
 
 Tree.prototype.addChild = function(value) {
-  // implement me...
+  const newNode = new Node(value);
+  return this.children.push(newNode);
 };
-// Time complexity:
+// Time complexity: O(1);
 
 
 Tree.prototype.contains = function(value) {

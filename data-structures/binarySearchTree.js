@@ -85,22 +85,26 @@ BinarySearchTree.prototype.contains = function(value) {
     return this.right.contains(value);
   }
 };
-// Time complexity:
+// Time complexity: Olog(n);
 
 BinarySearchTree.prototype.traverseDepthFirst_inOrder = function(fn) {
   if (this.left) return this.left.traverseDepthFirst_inOrder(fn);
   fn(this);
   if (this.right) return this.right.traverseDepthFirst_inOrder(fn);
 };
-// Time complexity:
+// Time complexity: Olog(n);
 
 BinarySearchTree.prototype.traverseDepthFirst_preOrder = function(fn) {
-  // implement me...
+  fn(this);
+  if (this.left) this.left.traverseDepthFirst_preOrder(fn);
+  if (this.right) this.right.traverseDepthFirst_preOrder(fn);
 };
-// Time complexity:
+// Time complexity: Olog(n);
 
 BinarySearchTree.prototype.traverseDepthFirst_postOrder = function(fn) {
-  // implement me...
+  if (this.left) this.left.traverseDepthFirst_postOrder(fn);
+  if (this.right) this.right.traverseDepthFirst_postOrder(fn);
+  fn(this);
 };
 // Time complexity:
 

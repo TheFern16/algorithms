@@ -19,3 +19,18 @@ Variants:
 (https://en.wikipedia.org/wiki/Cocktail_sort)
 
 */
+var testArray = [1,23,8,20,15,30,100,75,2,8,80,2,200,2,300];
+
+function bubbleSort(arr = [], swapped = false) {
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] > arr[i+1]) {
+			let temp = arr[i];
+			arr[i] = arr[i+1];
+			arr[i+1] = temp;
+			swapped = true;
+		}
+	}
+
+	return swapped === true ? bubbleSort(arr, false) : arr;
+}
+

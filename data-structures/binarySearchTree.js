@@ -88,7 +88,9 @@ BinarySearchTree.prototype.contains = function(value) {
 // Time complexity:
 
 BinarySearchTree.prototype.traverseDepthFirst_inOrder = function(fn) {
-  // implement me...
+  if (this.left) return this.left.traverseDepthFirst_inOrder(fn);
+  fn(this);
+  if (this.right) return this.right.traverseDepthFirst_inOrder(fn);
 };
 // Time complexity:
 

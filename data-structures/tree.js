@@ -58,17 +58,18 @@ Tree.prototype.contains = function(value) {
 	let result = false;
 	(function search(currentNode) {
 		if (currentNode.value === value) return result = true;
-		currentNode.children.forEach((child) => {
-			search(child);
-		})
+		currentNode.children.forEach((child) => search(child))
 	})(this);
 	return result;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 
 Tree.prototype.traverseDepthFirst = function(fn) {
-  // implement me...
+	(function search(currentNode) {		
+		currentNode.value = fn(currentNode.value);
+		currentNode.children.forEach((child) => search(child))
+	})(this);
 };
 // Time complexity:
 

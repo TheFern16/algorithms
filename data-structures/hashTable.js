@@ -98,9 +98,10 @@ HashTable.prototype.set = function(key, value) {
 // Time complexity: O(1);
 
 HashTable.prototype.get = function(key) {
-  // implement me...
+  const hashKey = simpleHash(key, this.size);
+  return this.storage[hashKey] ? this.storage[hashKey] : this;
 };
-// Time complexity:
+// Time complexity: O(1);
 
 HashTable.prototype.has = function(key) {
   // implement me...

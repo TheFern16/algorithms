@@ -104,7 +104,7 @@ HashTable.prototype.get = function(key) {
 // Time complexity: O(1);
 
 HashTable.prototype.has = function(key) {
-  // implement me...
+  return this.get(key).length >= 2 ? true : false;
 };
 // Time complexity:
 

@@ -67,8 +67,10 @@ function simpleHash(str, tableSize) {
 }
 // source: http://pmav.eu/stuff/javascript-hashing-functions/source.html
 
-function HashTable(/* ??? */) {
-  // implement me...
+function HashTable(size) {
+  this.size = size;
+  this.storage = [];
+  this.count = 0;
 }
 
 // This is a helper method that you may want to implement to help keep your code DRY

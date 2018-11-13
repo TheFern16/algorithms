@@ -122,12 +122,14 @@ HashTable.prototype.delete = function(key) {
 HashTable.prototype.count = function() {
   return this.count;
 };
-// Time complexity:
+// Time complexity: O(1)
 
 HashTable.prototype.forEach = function(callback) {
-  // implement me...
+  return this.storage.forEach((val, key) => {
+    return callback(val, key);
+  });
 };
-// Time complexity:
+// Time complexity: O(n);
 
 
 

@@ -92,6 +92,7 @@ HashTable.prototype.set = function(key, value) {
   const hashKey = simpleHash(key, this.size);
   if (this.count < this.size) {
     this.storage[hashKey] = ([key, value]);
+    this.count++;
   }
   return this;
 };
@@ -110,12 +111,16 @@ HashTable.prototype.has = function(key) {
 
 HashTable.prototype.delete = function(key) {
   const hashKey = simpleHash(key, this.size);
-  return this.storage[hashKey] = [];
+  if (this.count > 0) {
+    this.storage[hashKey] = [];
+    this.count--;
+  }
+  return this;
 };
 // Time complexity: O(1);
 
 HashTable.prototype.count = function() {
-  // implement me...
+  return this.count;
 };
 // Time complexity:
 

@@ -106,12 +106,13 @@ HashTable.prototype.get = function(key) {
 HashTable.prototype.has = function(key) {
   return this.get(key).length >= 2 ? true : false;
 };
-// Time complexity:
+// Time complexity: O(1);
 
 HashTable.prototype.delete = function(key) {
-  // implement me...
+  const hashKey = simpleHash(key, this.size);
+  return this.storage[hashKey] = [];
 };
-// Time complexity:
+// Time complexity: O(1);
 
 HashTable.prototype.count = function() {
   // implement me...

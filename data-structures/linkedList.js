@@ -180,7 +180,7 @@ LinkedList.prototype.insertBefore = function(node, value) {
   const newNode = new Node(value);
   let inserted = false;
   this.forEach((n, k) => {
-    if (n.next.value === node.value && !inserted) {
+    if (n.next && n.next.value === node.value && !inserted) {
       let temp = n.next;
       n.next = newNode;
       n.next.next = temp;

@@ -46,27 +46,52 @@ myStack.until(7)
 => 4
 What's the time complexity?
 
+LIFO
+
+2 (0)
+
+3 (1)
+
+4 (2)
+
+10 (3)
+
+7 (4)
+
+this means the highest index must always be removed first.  
 
 
  */
 
 function Stack(capacity) {
   this.storage = {};
+  this.index = 0;
+  this.capacity = capacity;
 }
 
 Stack.prototype.push = function(value) {
+	if (this.index < this.capacity) {
+		this.storage[this.index] = value;
+		this.index++;
+	}
 };
 // Time complexity: O(1);
 
 Stack.prototype.pop = function() {
+	if (this.index > 0) {
+		this.index--;
+		delete this.storage[this.index];
+	}
 };
 // Time complexity: O(1);
 
 Stack.prototype.peek = function() {
+	return this.index >= 0 ? this.storage[this.index - 1] : this;
 };
 // Time complexity: 0(1);
 
 Stack.prototype.count = function() {
+	return this.index >= 0 ? this.index : this;
 };
 // Time complexity: O(1);
 

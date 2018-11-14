@@ -116,17 +116,25 @@ LinkedList.prototype.insertAfter = function(node, value) {
     }
   });
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.removeAfter = function(node) {
-  // implement me...
+  return this.forEach((n, k) => {
+    if (node.value === n.value) {
+      let temp = n.next.next;
+      n.next = temp;
+    }
+  });
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.insertHead = function(value) {
-  // implement me...
+  const newNode = new Node(value);
+  const temp = this.head;
+  this.head = newNode;
+  this.head.next = temp;
 };
-// Time complexity:
+// Time complexity: O(1);
 
 LinkedList.prototype.removeHead = function() {
   // implement me...

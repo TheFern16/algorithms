@@ -90,10 +90,12 @@ Queue.prototype.dequeue = function() {
 // Time complexity: 0(1);
 
 Queue.prototype.peek = function() {
+	return this.index >= 0 ? this.storage[this.index - 1] : this;
 };
 // Time complexity: 0(1);
 
 Queue.prototype.count = function() {
+	return this.index >= 0 ? this.index - 1 : this;
 };
 // Time complexity: 0(1);
 

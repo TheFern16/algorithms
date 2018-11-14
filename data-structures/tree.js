@@ -40,19 +40,30 @@ https://en.wikipedia.org/wiki/Trie
 */
 
 function Tree (value) {
-  // implement me...
+	this.value = value;
+	this.children = [];
 }
 
 Tree.prototype.addChild = function(value) {
-  // implement me...
+  const newNode = new Tree(value);
+  this.children.push(newNode);
 };
-// Time complexity:
+// Time complexity: O(1);
 
 
 Tree.prototype.contains = function(value) {
-  // implement me...
+  var result = false;
+  
+  (function search(currentNode) {
+  	if (currentNode.value === value) {
+  		return result = true;
+  	}
+  	currentNode.children.forEach(child => child.contains(value));
+  })(this);
+
+  return result;
 };
-// Time complexity:
+// Time complexity: O(n)
 
 
 Tree.prototype.traverseDepthFirst = function(fn) {

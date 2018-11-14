@@ -53,11 +53,9 @@ Tree.prototype.addChild = function(value) {
 
 Tree.prototype.contains = function(value) {
   var result = false;
-  
+
   (function search(currentNode) {
-  	if (currentNode.value === value) {
-  		return result = true;
-  	}
+  	if (currentNode.value === value) return result = true;
   	currentNode.children.forEach(child => child.contains(value));
   })(this);
 
@@ -67,7 +65,10 @@ Tree.prototype.contains = function(value) {
 
 
 Tree.prototype.traverseDepthFirst = function(fn) {
-  // implement me...
+  (function search(currentNode) {
+  	typeof fn === 'function' ? fn(currentNode) : currentNode[fn];
+  	return currentNode.children.forEach(child => child.traverseDepthFirst(fn));
+  })(this);
 };
 // Time complexity:
 

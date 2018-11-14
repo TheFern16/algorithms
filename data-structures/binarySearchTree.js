@@ -104,7 +104,9 @@ BinarySearchTree.prototype.traverseDepthFirst_preOrder = function(fn) {
 // Time complexity: O(n);
 
 BinarySearchTree.prototype.traverseDepthFirst_postOrder = function(fn) {
-  // implement me...
+  if (this.left) this.left.traverseDepthFirst_postOrder(fn);
+  if (this.right) this.right.traverseDepthFirst_postOrder(fn);
+  fn(this);
 };
 // Time complexity:
 

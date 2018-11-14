@@ -133,6 +133,8 @@ LinkedList.prototype.insertHead = function(value) {
   const temp = this.head;
   this.head = newNode;
   this.head.next = temp;
+
+  return this;
 };
 // Time complexity: O(1);
 
@@ -141,6 +143,8 @@ LinkedList.prototype.removeHead = function() {
     let temp = this.head.next;
     this.head = temp;
   }
+
+  return this;
 };
 
 LinkedList.prototype.findNode = function(value) {
@@ -150,14 +154,24 @@ LinkedList.prototype.findNode = function(value) {
       result = true;
     }
   });
+
   return result;
 };
 // Time complexity: O(n);
 
 LinkedList.prototype.appendToTail = function(value) {
-  // implement me...
+  const newNode = new Node(value);
+  let inserted = false;
+  this.forEach((n, k) => {
+    if (n.next === null && inserted === false) {
+      n.next = newNode;
+      inserted = true;
+    }
+  });
+
+  return this;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 
 // PART 2:

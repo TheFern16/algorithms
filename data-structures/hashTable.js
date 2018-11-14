@@ -73,9 +73,6 @@ function HashTable(size) {
   this.count = 0;
 }
 
-// This is a helper method that you may want to implement to help keep your code DRY
-// You can implement the hash table methods without it.
-// I recommend skipping it and coming back if you find that it will be useful
 HashTable.prototype.find = function(key) {
   return {
     match: match,
@@ -84,10 +81,6 @@ HashTable.prototype.find = function(key) {
   };
 };
 
-// Store the key-value pair in the storage array.
-// If the key already exists, replace stored value with new value.
-// Use the hashing function to map the key to an integer and store the value at the corresponding index.
-// Account for the possibility of collisions.
 HashTable.prototype.set = function(key, value) {
   const hashKey = simpleHash(key, this.size);
   if (this.count < this.size) {

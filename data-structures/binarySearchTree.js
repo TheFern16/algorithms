@@ -108,13 +108,18 @@ BinarySearchTree.prototype.traverseDepthFirst_postOrder = function(fn) {
   if (this.right) this.right.traverseDepthFirst_postOrder(fn);
   fn(this);
 };
-// Time complexity:
+// Time complexity: O(n);
 
 
 BinarySearchTree.prototype.checkIfFull = function() {
-  // implement me...
+  var result = true;
+  this.traverseDepthFirst_inOrder((node) => {
+    if (!node.left && node.right) result = false;
+    if (node.left && !node.right) result = false;
+  });
+  return result;
 };
-// Time complexity:
+// Time complexity: O(n)
 
 BinarySearchTree.prototype.checkIfBalanced = function() {
   // implement me...

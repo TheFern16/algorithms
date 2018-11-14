@@ -78,27 +78,14 @@ Queue.prototype.enqueue = function(value) {
 // Time complexity: 0(1);
 
 Queue.prototype.dequeue = function() {
-	// every time the dequeue method is invoked I need to increment the toberemoved 
-	// 0 1 2 3 4
-	// 0
-	// 1
-	// 2
-	// 3
-	// 4
-	// if (toberemoved === index)  
-		// delete storage[toberemoved]
-		// toberemoved && index = 0;
-	// else if (toberemoved < index)
-	  // delete storage[toberemoved]
-	  // toberemoved++
-	 if (this.toBeRemoved === this.index) {
-		 delete this.storage[this.toBeRemoved];
-	 	 this.toBeRemoved = 0;
-	 	 this.index = 0;
-	 } else if (this.toBeRemoved < this.index) {
+	if (this.toBeRemoved === this.index) {
 	 	 delete this.storage[this.toBeRemoved];
-	 	 this.toBeRemoved++; 
-	 }
+		 this.toBeRemoved = 0;
+		 this.index = 0;
+	} else if (this.toBeRemoved < this.index) {
+		 delete this.storage[this.toBeRemoved];
+		 this.toBeRemoved++; 
+	}
 };
 // Time complexity: 0(1);
 

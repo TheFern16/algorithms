@@ -144,9 +144,15 @@ LinkedList.prototype.removeHead = function() {
 };
 
 LinkedList.prototype.findNode = function(value) {
-  // implement me...
+  let result = false;
+  this.forEach((n, k) => {
+    if (n.value === value) {
+      result = true;
+    }
+  });
+  return result;
 };
-// Time complexity:
+// Time complexity: O(n);
 
 LinkedList.prototype.appendToTail = function(value) {
   // implement me...

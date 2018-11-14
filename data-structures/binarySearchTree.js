@@ -58,14 +58,36 @@ function BinarySearchTree (value) {
 }
 
 BinarySearchTree.prototype.insert = function(value) {
-  // implement me...
+  const newNode = new BinarySearchTree(value);
+  if (value <= this.value) {
+    if (this.left === null) {
+      this.left = newNode;
+      return;
+    } else {
+      this.left.insert(value);
+    }
+  } else {
+    if (this.right === null) {
+      this.right = newNode;
+      return;
+    } else {
+      this.right.insert(value);
+    }
+  }
 };
-// Time complexity:
+// Time complexity: Olog(n);
 
 BinarySearchTree.prototype.contains = function(value) {
-  // implement me...
+  if (this.value === value) return true;
+  if (value <= this.value) {
+    if (this.left === null) return false;
+    else return this.left.contains(value);
+  } else {
+    if (this.right === null) return false;
+    else return this.right.contains(value);
+  }
 };
-// Time complexity:
+// Time complexity: Olog(n);
 
 BinarySearchTree.prototype.traverseDepthFirst_inOrder = function(fn) {
   // implement me...

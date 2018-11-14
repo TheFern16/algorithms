@@ -45,20 +45,60 @@ myQueue.until(7)
 => 3
 What's the time complexity?
 
+FIFO
 
+2 (0 index) (first to be removed)
+
+5 (1 index)
+
+7 (2 index)
+
+3 (3 index)
+
+6 (4 index)
+
+9 (5 index) (last to be removed)
 
 
  */
 
 function Queue(capacity) {
   this.storage = {};
+  this.index = 0;
+  this.toBeRemoved = 0;
+  this.capacity = capacity;
 }
 
 Queue.prototype.enqueue = function(value) {
+	if (this.index < this.capacity) {
+		this.storage[this.index] = value;
+		this.index++;
+	}
 };
 // Time complexity: 0(1);
 
 Queue.prototype.dequeue = function() {
+	// every time the dequeue method is invoked I need to increment the toberemoved 
+	// 0 1 2 3 4
+	// 0
+	// 1
+	// 2
+	// 3
+	// 4
+	// if (toberemoved === index)  
+		// delete storage[toberemoved]
+		// toberemoved && index = 0;
+	// else if (toberemoved < index)
+	  // delete storage[toberemoved]
+	  // toberemoved++
+	 if (this.toBeRemoved === this.index) {
+		 delete this.storage[this.toBeRemoved];
+	 	 this.toBeRemoved = 0;
+	 	 this.index = 0;
+	 } else if (this.toBeRemoved < this.index) {
+	 	 delete this.storage[this.toBeRemoved];
+	 	 this.toBeRemoved++; 
+	 }
 };
 // Time complexity: 0(1);
 

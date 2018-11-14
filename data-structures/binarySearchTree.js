@@ -90,9 +90,11 @@ BinarySearchTree.prototype.contains = function(value) {
 // Time complexity: Olog(n);
 
 BinarySearchTree.prototype.traverseDepthFirst_inOrder = function(fn) {
-  // implement me...
+  if (this.left) this.left.traverseDepthFirst_inOrder(fn);
+  fn(this);
+  if (this.right) this.right.traverseDepthFirst_inOrder(fn);
 };
-// Time complexity:
+// Time complexity: O(n);
 
 BinarySearchTree.prototype.traverseDepthFirst_preOrder = function(fn) {
   // implement me...

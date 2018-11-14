@@ -74,6 +74,9 @@ Tree.prototype.traverseDepthFirst = function(fn) {
 
 
 Tree.prototype.traverseBreadthFirst = function(fn) {
-  // implement me...
+  (function search(currentNode) {
+  	currentNode.children.forEach(child => child.traverseDepthFirst(fn));
+  	return typeof fn === 'function' ? fn(currentNode) : currentNode[fn];
+  })(this);
 };
 // Time complexity:

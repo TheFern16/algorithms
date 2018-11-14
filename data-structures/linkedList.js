@@ -107,7 +107,14 @@ LinkedList.prototype.print = function() {
 // Time complexity: O(n);
 
 LinkedList.prototype.insertAfter = function(node, value) {
-  // implement me...
+  const newNode = new Node(value);
+  return this.forEach((n, k) => {
+    if (node.value === n.value) {
+      let temp = n.next;
+      n.next = newNode;
+      n.next.next = temp;
+    }
+  });
 };
 // Time complexity:
 
